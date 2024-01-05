@@ -1,8 +1,4 @@
-import React, { DetailedHTMLProps } from "react";
-
-const styles = {
-  root: "text",
-};
+import React from "react";
 
 type DefaultVariantMappingType =
   | "h1"

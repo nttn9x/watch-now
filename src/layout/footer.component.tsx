@@ -1,8 +1,7 @@
-import React from "react";
 import { Typography } from "@hello/components";
 
 const styles = {
-  root: "flex items-center justify-center border-t-8 p-12",
+  root: "flex items-center justify-center border-slate-700 border-t-8 p-12",
   author: "text-primary-500 font-semibold ml-1",
 };
 
