@@ -1,44 +1,25 @@
+import clsx from "clsx";
 import React from "react";
 
-type DefaultVariantMappingType =
-  | "h1"
-  | "h2"
-  | "h3"
-  | "h4"
-  | "h5"
-  | "h6"
-  | "inherit";
+type DefaultVariantMappingType = "h1" | "h2" | "h3" | "h6" | "body";
 
 interface DefaultVariantMappingProps {
   h1: string;
   h2: string;
   h3: string;
-  h4: string;
-  h5: string;
   h6: string;
-  subtitle1: string;
-  subtitle2: string;
-  body1: string;
-  body2: string;
-  inherit: string;
+  body: string;
 }
 
 const defaultVariantMapping: DefaultVariantMappingProps = {
   h1: "h1",
-  h2: "h2",
-  h3: "h3",
-  h4: "h4",
-  h5: "h5",
+  h2: "h6",
+  h3: "h6",
   h6: "h6",
-  subtitle1: "h6",
-  subtitle2: "h6",
-  body1: "p",
-  body2: "p",
-  inherit: "p",
+  body: "p",
 };
 
 type ColorTransformationsType =
-  | "primary"
   | "primary"
   | "textPrimary"
   | "secondary"
@@ -57,25 +38,42 @@ const colorTransformations: ColorTransformationsProps = {
   primary: "primary.main",
   textPrimary: "text-white",
   secondary: "secondary.main",
-  textSecondary: "text.secondary",
+  textSecondary: "text-white/70",
   error: "error.main",
+};
+
+const variantTransformations: DefaultVariantMappingProps = {
+  h1: "text-6xl font-extrabold",
+  h2: "text-4xl font-bold",
+  h3: "text-3xl font-semibold",
+  h6: "text-xl",
+  body: "text-base",
+};
+
+const transformDeprecatedVariant = (variant: DefaultVariantMappingType) => {
+  return variantTransformations[variant] || variant;
 };
 
 const transformDeprecatedColors = (color: ColorTransformationsType) => {
   return colorTransformations[color] || color;
 };
 
-interface TypographyProps {
+interface TypographyProps extends React.HTMLAttributes<HTMLElement> {
   variant?: DefaultVariantMappingType;
   color?: ColorTransformationsType;
-  children: React.ReactNode;
+  className?: string;
 }
 
-function Typography({ variant, color, children }: TypographyProps) {
+function Typography({ variant, color, children, className }: TypographyProps) {
   const element = defaultVariantMapping[variant!];
-  const className = transformDeprecatedColors(color!);
+  const classVariant = transformDeprecatedVariant(variant!);
+  const classText = transformDeprecatedColors(color!);
 
-  return React.createElement(element, { className }, children);
+  return React.createElement(
+    element,
+    { className: clsx(classVariant, classText, className) },
+    children
+  );
 }
 
 Typography.defaultProps = {

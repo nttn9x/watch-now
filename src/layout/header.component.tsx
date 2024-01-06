@@ -6,7 +6,9 @@ import LogoIcon from "@hello/assets/logo.svg";
 import { APP_URLS } from "@hello/constants/navigation.constant";
 
 const styles = {
-  header: "flex p-4 items-center sticky top-0",
+  header: clsx(
+    "bg-white dark:bg-black flex py-4 px-8 items-center sticky top-0 h-[64px] z-50"
+  ),
   logo: "h-[32px]",
   nav: "flex-1 text-white ml-10 flex items-center",
   link: "text-white-500 font-medium",

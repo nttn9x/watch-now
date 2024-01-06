@@ -1,4 +1,4 @@
-import { Typography } from "@hello/components";
+import { Typography } from "@hello/components/atoms";
 
 function Series() {
   return (

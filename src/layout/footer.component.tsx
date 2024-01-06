@@ -1,14 +1,14 @@
-import { Typography } from "@hello/components";
+import { Typography } from "@hello/components/atoms";
 
 const styles = {
-  root: "flex items-center justify-center border-slate-700 border-t-8 p-12",
+  root: "flex items-center justify-center border-slate-700 border-t-8 p-12 mt-24",
   author: "text-primary-500 font-semibold ml-1",
 };
 
 function Footer() {
   return (
     <footer className={styles.root}>
-      <Typography variant="h6">Made with ♥ by</Typography>
+      <Typography variant="body">Made with ♥ by</Typography>
       <a
         className={styles.author}
         target="open"

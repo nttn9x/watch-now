@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 
 const styles = {
   root: "bg-white dark:bg-black h-full overflow-auto flex flex-col",
-  content: "flex-1 p-12",
+  content: "flex-1",
 };
 
 function Layout() {
