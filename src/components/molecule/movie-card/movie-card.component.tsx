@@ -10,7 +10,7 @@ function MovieCard({ movie, className }: MovieCardProps) {
   return (
     <div
       className={clsx(
-        "mx-2 flex items-end w-[230px] h-[350px] relative h-full px-12 py-20 rounded-lg overflow-hidden hover:cursor-pointer",
+        "mx-2 flex items-end w-[230px] h-[350px] relative px-12 py-20 rounded-lg overflow-hidden hover:cursor-pointer",
         className
       )}
     >

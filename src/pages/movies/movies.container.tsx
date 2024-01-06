@@ -9,7 +9,7 @@ function Movies() {
         label="top_rated"
         type={MovieType.TopRated}
         styles={{
-          movieCard: "w-[400px] h-[500px]",
+          movieCard: "w-[350px] h-[500px]",
         }}
       />
       <MoviesList label="now_playing" type={MovieType.NowPlaying} />
