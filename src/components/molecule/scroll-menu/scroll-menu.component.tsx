@@ -57,7 +57,12 @@ export function LeftArrow() {
   const clickHandler = () => scrollToItem(getPrevElement(), "smooth", "start");
   return (
     <Arrow disabled={disabled} onClick={clickHandler}>
-      <img alt="Arrow Left" aria-label="back" src={ArrowIcon} />
+      <img
+        alt="Arrow Left"
+        className="opacity-70"
+        aria-label="back"
+        src={ArrowIcon}
+      />
     </Arrow>
   );
 }

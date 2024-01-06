@@ -31,7 +31,7 @@ function MoviesList({ label, type, styles }: MoviesListProps) {
         {t(label)}
       </Typography>
       <ScrollMenu>
-        {data?.map((movie: Movie) => (
+        {(data! as Movie[])?.map((movie: Movie) => (
           <MovieCard
             key={movie.id}
             movie={movie}
