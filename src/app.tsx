@@ -33,8 +33,7 @@ const App = () => {
           }
         >
           <Route index element={<Navigate to="/movies" replace />} />
-          <Route path={APP_URLS.Movies} element={<Movies />} />
-          <Route path={APP_URLS.Movie} element={<Movie />} />
+          <Route path={APP_URLS.Movie} element={<Movies />} />
           <Route path={APP_URLS.Series} element={<Series />} />
           <Route path="*" element={<NoMatch />} />
         </Route>

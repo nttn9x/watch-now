@@ -68,7 +68,6 @@ function Typography({ variant, color, children, className }: TypographyProps) {
   const element = defaultVariantMapping[variant!];
   const classVariant = transformDeprecatedVariant(variant!);
   const classText = transformDeprecatedColors(color!);
-
   return React.createElement(
     element,
     { className: clsx(classVariant, classText, className) },
@@ -77,7 +76,7 @@ function Typography({ variant, color, children, className }: TypographyProps) {
 }
 
 Typography.defaultProps = {
-  variant: "inherit",
+  variant: "body",
   color: "textPrimary",
 };
 

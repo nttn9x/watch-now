@@ -50,3 +50,10 @@ export async function getUpComing(options: MovieParams = {}) {
     params,
   });
 }
+
+export async function getMovieById(id: string) {
+  return await callApi<Movie>({
+    url: `/movie/${id}`,
+    method: "GET",
+  });
+}

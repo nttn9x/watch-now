@@ -101,6 +101,7 @@ interface MoviesTopRated {
 function MoviesTopRated({ children }: any) {
   return (
     <ScrollMenu
+      data-testid="scroll-menu"
       LeftArrow={LeftArrow}
       RightArrow={RightArrow}
       options={{
