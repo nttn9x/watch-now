@@ -23,6 +23,7 @@ function Button({ variant, className, ...rest }: ButtonProps) {
   const classVariant = transformDeprecatedVariant(variant!);
   return (
     <button
+      data-testid="button"
       className={clsx("rounded-md px-2 py-2", classVariant, className)}
       {...rest}
     ></button>

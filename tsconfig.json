@@ -29,7 +29,10 @@
       "services/*": [
         "./src/services/*"
       ]
-    }
+    },
+    "types": [
+      "vitest/globals"
+    ],
   },
   "include": [
     "src"

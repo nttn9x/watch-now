@@ -31,13 +31,14 @@ function Dialog({ visible, onClose, children }: DialogProps) {
     <>
       {visible ? (
         <div
-          data-testid="modal"
+          data-testid="dialog"
           aria-label="Dialog"
           className={styles.root}
           onClick={onClickSomewhere}
         >
           <div className={styles.body} ref={modalRef}>
             <button
+              data-testid="close-button"
               className={styles.closeButton}
               aria-label="Close Button"
               onClick={onClose}
