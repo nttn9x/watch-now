@@ -1,12 +1,15 @@
-import "react-horizontal-scrolling-menu/dist/styles.css";
 import MoviesList from "./movies-list.component";
 import { MovieType } from "./movies.constant";
 import Movie from "../movie/movie.container";
 
+const styles = {
+  root: "mt-8 flex flex-col gap-12",
+};
+
 function Movies() {
   return (
     <>
-      <div className="mt-8 flex flex-col gap-12">
+      <div className={styles.root}>
         <MoviesList
           label="top_rated"
           type={MovieType.TopRated}

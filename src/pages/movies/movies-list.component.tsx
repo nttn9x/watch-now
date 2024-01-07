@@ -19,6 +19,11 @@ interface MoviesListProps {
   };
 }
 
+const rootStyles = {
+  title: "w-[500px] px-12 mb-4",
+  skeleton: "flex gap-4 px-12",
+};
+
 function MoviesList({ label, type, styles }: MoviesListProps) {
   const { t } = useTranslation();
   const { data, loading } = useMoviesHook(type);
@@ -28,14 +33,14 @@ function MoviesList({ label, type, styles }: MoviesListProps) {
       <Typography
         variant="h3"
         color="textSecondary"
-        className="w-[500px] px-12 mb-4"
+        className={rootStyles.title}
         data-testid={label}
         arial-aria-label={t(label)}
       >
         {t(label)}
       </Typography>
       {loading && (
-        <div className="flex gap-4 px-12">
+        <div className={rootStyles.skeleton} data-testid="loading">
           <div className={styles?.movieCard || "w-[230px] h-[350px]"}>
             <Skeleton />
           </div>
@@ -47,12 +52,8 @@ function MoviesList({ label, type, styles }: MoviesListProps) {
       {!loading && (
         <ScrollMenu>
           {(data! as Movie[])?.map((movie: Movie) => (
-            <Link to={`${APP_URLS.Movies}/${movie.id}`}>
-              <MovieCard
-                key={movie.id}
-                movie={movie}
-                className={styles?.movieCard}
-              />
+            <Link key={movie.id} to={`${APP_URLS.Movies}/${movie.id}`}>
+              <MovieCard movie={movie} className={styles?.movieCard} />
             </Link>
           ))}
         </ScrollMenu>
