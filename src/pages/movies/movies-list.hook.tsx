@@ -6,10 +6,14 @@ import {
   getPopular,
   getUpComing,
 } from "@hello/services/movie.service";
+import { Movie } from "@hello/models/movie.model";
 import { MovieType } from "./movies.constant";
 
 function useMoviesHook(type: MovieType) {
-  const [state, setState] = useState({
+  const [state, setState] = useState<{
+    loading: boolean;
+    data: Movie[] | null | undefined;
+  }>({
     loading: true,
     data: null,
   });
@@ -34,7 +38,7 @@ function useMoviesHook(type: MovieType) {
     };
 
     loadData();
-  }, [setState, type]);
+  }, [type]);
 
   return state;
 }

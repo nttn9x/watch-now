@@ -8,13 +8,16 @@ import { useNavigate, useParams } from "react-router-dom";
 function useMovieHook() {
   const params = useParams();
   const navigate = useNavigate();
-  const [movie, setMovie] = useState<{ loading: boolean; data: Movie | null }>({
+  const [movie, setMovie] = useState<{
+    loading: boolean;
+    data: Movie | undefined | null;
+  }>({
     loading: true,
     data: null,
   });
   const [credits, setCredits] = useState<{
     loading: boolean;
-    data: { cast: Credit[] } | null;
+    data: { cast: Credit[] } | null | undefined;
   }>({
     loading: true,
     data: null,

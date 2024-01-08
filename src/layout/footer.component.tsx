@@ -7,12 +7,13 @@ const styles = {
 
 function Footer() {
   return (
-    <footer className={styles.root}>
+    <footer data-testid="footer" className={styles.root}>
       <Typography variant="body">Made with ♥ by</Typography>
       <a
+        data-testid="profile-link"
         className={styles.author}
         target="open"
-        href="https://thor-meeting-client.onrender.com/portfolio"
+        href={import.meta.env.VITE_PROFILE_URL}
       >
         Nguyen
       </a>

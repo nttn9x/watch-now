@@ -11,7 +11,7 @@ function Layout() {
   return (
     <main data-testid="main" className={styles.root}>
       <Header />
-      <div className={styles.content}>
+      <div data-testid="body" className={styles.content}>
         <Outlet />
       </div>
       <Footer />

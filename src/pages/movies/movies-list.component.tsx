@@ -29,12 +29,11 @@ function MoviesList({ label, type, styles }: MoviesListProps) {
   const { data, loading } = useMoviesHook(type);
 
   return (
-    <section>
+    <section data-testid={type}>
       <Typography
         variant="h3"
         color="textSecondary"
         className={rootStyles.title}
-        data-testid={label}
         arial-aria-label={t(label)}
       >
         {t(label)}
@@ -52,7 +51,11 @@ function MoviesList({ label, type, styles }: MoviesListProps) {
       {!loading && (
         <ScrollMenu>
           {(data! as Movie[])?.map((movie: Movie) => (
-            <Link key={movie.id} to={`${APP_URLS.Movies}/${movie.id}`}>
+            <Link
+              data-testid={`link-${movie.id}`}
+              key={movie.id}
+              to={`${APP_URLS.Movies}/${movie.id}`}
+            >
               <MovieCard movie={movie} className={styles?.movieCard} />
             </Link>
           ))}

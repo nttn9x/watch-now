@@ -17,10 +17,10 @@ const styles = {
 
 function Header() {
   return (
-    <header className={styles.header}>
-      <img className={styles.logo} src={LogoIcon} />
+    <header data-testid="header" className={styles.header}>
+      <img data-testid="logo" className={styles.logo} src={LogoIcon} />
 
-      <nav className={styles.nav} aria-label="Menu">
+      <nav data-testid="nav" className={styles.nav} aria-label="Menu">
         <NavLink
           className={({ isActive }) =>
             clsx(styles.link, {

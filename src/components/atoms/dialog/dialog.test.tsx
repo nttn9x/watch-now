@@ -3,7 +3,7 @@ import { render, screen, waitFor, fireEvent } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
 import Dialog from "./dialog.component";
 
-describe("Navigation Constant", () => {
+describe("Dialog Component", () => {
   it("Should render without crash", async () => {
     render(<Dialog visible onClose={() => {}} />);
 

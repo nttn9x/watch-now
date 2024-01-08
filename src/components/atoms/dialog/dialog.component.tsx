@@ -16,12 +16,12 @@ const styles = {
 };
 
 function Dialog({ visible, onClose, children }: DialogProps) {
-  const modalRef = useRef<any>(null);
+  const modalRef = useRef<HTMLDivElement>(null);
 
   const onClickSomewhere = (
     e: React.MouseEvent<HTMLDivElement | HTMLButtonElement, MouseEvent>
   ) => {
-    if (modalRef?.current?.contains(e.target)) {
+    if (modalRef?.current?.contains(e.target as Node)) {
       return;
     }
     onClose(e);

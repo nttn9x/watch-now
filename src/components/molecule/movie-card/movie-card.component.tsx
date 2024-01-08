@@ -16,7 +16,7 @@ const styles = {
 function MovieCard({ movie, className, ...rest }: MovieCardProps) {
   return (
     <div
-      data-testid="card"
+      data-testid="movie-card"
       className={clsx(styles.container, className)}
       {...rest}
     >

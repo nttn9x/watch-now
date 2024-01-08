@@ -66,13 +66,19 @@ interface TypographyProps extends React.HTMLAttributes<HTMLElement> {
   className?: string;
 }
 
-function Typography({ variant, color, children, className }: TypographyProps) {
+function Typography({
+  variant,
+  color,
+  children,
+  className,
+  ...rest
+}: TypographyProps) {
   const element = defaultVariantMapping[variant!];
   const classVariant = transformDeprecatedVariant(variant!);
   const classText = transformDeprecatedColors(color!);
   return React.createElement(
     element,
-    { className: clsx(classVariant, classText, className) },
+    { className: clsx(classVariant, classText, className), ...rest },
     children
   );
 }

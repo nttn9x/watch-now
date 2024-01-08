@@ -9,7 +9,7 @@ const styles = {
 function Movies() {
   return (
     <>
-      <div className={styles.root}>
+      <div data-testid="movie-list" className={styles.root}>
         <MoviesList
           label="top_rated"
           type={MovieType.TopRated}

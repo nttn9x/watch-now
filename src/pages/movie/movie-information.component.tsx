@@ -34,14 +34,22 @@ function MovieInformation({ movie, credits }: MovieInformationProps) {
   }
 
   return (
-    <div className={styles.container} aria-label="Movie Information">
+    <div
+      data-testid="information"
+      className={styles.container}
+      aria-label="Movie Information"
+    >
       <section className={styles.section}>
         <Typography variant="h4" color="textPrimary">
           {t("series_cast")}
         </Typography>
         <div className={clsx(styles.row, styles.cast)}>
           {credits.data?.cast?.map((credit: Credit, index: number) => (
-            <div key={index} className={styles.castItem}>
+            <div
+              data-testid="cast-item"
+              key={index}
+              className={styles.castItem}
+            >
               <Image
                 className={styles.castItemImage}
                 src={import.meta.env.VITE_IMAGE_URL + credit.profile_path}
@@ -62,7 +70,11 @@ function MovieInformation({ movie, credits }: MovieInformationProps) {
         <div className={styles.row}>
           {movie.data?.production_companies?.map(
             (company: ProductionCompany, index: number) => (
-              <div key={index} className={styles.chip}>
+              <div
+                key={index}
+                data-testid="company-name"
+                className={styles.chip}
+              >
                 <Typography className="display-inline" variant="body">
                   {company.name}
                 </Typography>
@@ -78,7 +90,9 @@ function MovieInformation({ movie, credits }: MovieInformationProps) {
         <div className={styles.row}>
           {movie.data?.spoken_languages?.map((genre: Genre, index: number) => (
             <div key={index} className={styles.chip}>
-              <Typography variant="body">{genre.name}</Typography>
+              <Typography data-testid="country-name" variant="body">
+                {genre.name}
+              </Typography>
             </div>
           ))}
         </div>
@@ -91,7 +105,9 @@ function MovieInformation({ movie, credits }: MovieInformationProps) {
           {movie.data?.genres?.map(
             (language: SpokenLanguage, index: number) => (
               <div key={index} className={styles.chip}>
-                <Typography variant="body">{language.name}</Typography>
+                <Typography data-testid="genre-name" variant="body">
+                  {language.name}
+                </Typography>
               </div>
             )
           )}

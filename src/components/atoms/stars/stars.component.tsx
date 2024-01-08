@@ -8,14 +8,14 @@ interface StarProps extends React.HTMLAttributes<HTMLElement> {
   onChange?: () => void;
 }
 
-function Star(props: StarProps) {
-  return <ReactStars {...props} color2={"#ffd700"} />;
+function Stars(props: StarProps) {
+  return <ReactStars data-testid="stars" color2={"#ffd700"} {...props} />;
 }
 
-Star.defaultProps = {
+Stars.defaultProps = {
   count: 5,
   size: 14,
   edit: false,
 };
 
-export default Star;
+export default Stars;

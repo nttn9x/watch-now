@@ -14,7 +14,11 @@ function Container() {
 
   return (
     <Dialog visible={!!movieId} onClose={handleClose}>
-      <div className={styles.container} aria-label="body-dialog">
+      <div
+        data-testid="movie-dialog"
+        className={styles.container}
+        aria-label="body-dialog"
+      >
         <MovieBanner {...movie} />
         <MovieInformation movie={movie} credits={credits} />
       </div>

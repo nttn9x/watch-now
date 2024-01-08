@@ -93,12 +93,11 @@ export function RightArrow() {
   );
 }
 
-interface MoviesTopRated {
-  children: React.ReactNode;
-}
+interface ScrollMenuProps {}
 
-function MoviesTopRated({ children }: any) {
+function CustomScrollMenu(props: ScrollMenuProps) {
   return (
+    //@ts-expect-error: Lib does not work well with tslint, improve later
     <ScrollMenu
       data-testid="scroll-menu"
       LeftArrow={LeftArrow}
@@ -108,10 +107,9 @@ function MoviesTopRated({ children }: any) {
         rootMargin: "5px",
         threshold: [0.01, 0.05, 0.5, 0.75, 0.95, 1],
       }}
-    >
-      {children}
-    </ScrollMenu>
+      {...props}
+    ></ScrollMenu>
   );
 }
 
-export default MoviesTopRated;
+export default CustomScrollMenu;

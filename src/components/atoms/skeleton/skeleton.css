@@ -1,9 +1,0 @@
-.react-loading-skeleton {
-    height: 100%;
-    @apply bg-slate-900;
-}
-
-.react-loading-skeleton::after {
-    @apply bg-slate-800;
-    background-image: unset;
-}

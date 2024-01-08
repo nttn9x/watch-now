@@ -4,7 +4,7 @@ export function init() {
   axios.defaults.baseURL = import.meta.env.VITE_ENDPOINT_URL;
 }
 
-export async function callApi<T = any>(config: AxiosRequestConfig<T>) {
+export async function callApi<T>(config: AxiosRequestConfig<T>) {
   const res = await axios({
     ...config,
     params: { api_key: import.meta.env.VITE_ENDPOINT_KEY, ...config?.params },
@@ -18,5 +18,5 @@ export async function callApi<T = any>(config: AxiosRequestConfig<T>) {
       };
     });
 
-  return res as { ok: boolean; result?: any };
+  return res as { ok: boolean; result?: T };
 }
