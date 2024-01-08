@@ -1,7 +1,7 @@
 import { Route } from "react-router";
 import { describe, expect, it } from "vitest";
 import { server as happyServer } from "@hello/__mocks__/server-happy-case";
-import { renderWithRouter, screen, waitFor } from "@hello/test/test-utils";
+import { renderWithRouter, screen } from "@hello/test/test-utils";
 import "@testing-library/jest-dom";
 import Movie from "../../movie";
 import { credits, topRatedMovie } from "@hello/__mocks__/movie.handler";
