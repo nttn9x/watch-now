@@ -2,15 +2,13 @@ import clsx from "clsx";
 import { useMemo, useRef, useState } from "react";
 import "./header.css";
 
-import { Link } from "react-router-dom";
-import { APP_URLS } from "@hello/constants/navigation.constant";
-import { MovieCard } from "@hello/components/molecule";
-import { search as searchMovie } from "@hello/services/movie.service";
-import { Movie } from "@hello/models/movie.model";
 import GithubIcon from "@hello/assets/github.svg";
 import LogoIcon from "@hello/assets/logo.svg";
+import { Movie } from "@hello/models/movie.model";
+import { search as searchMovie } from "@hello/services/movie.service";
 
 import HeaderNav from "./header-nav.component";
+import HeaderResults from "./header-results.component";
 import HeaderSearch from "./header-search.component";
 
 const styles = {
@@ -91,17 +89,7 @@ function Header() {
           <img className={styles.logo} src={GithubIcon} />
         </a>
       </header>
-      <div className="flex-1 overflow-auto flex gap-4 justify-center flex-wrap">
-        {filter.data?.map((movie: Movie) => (
-          <Link
-            data-testid={`link-${movie.id}`}
-            key={movie.id}
-            to={`${APP_URLS.Movies}/${movie.id}`}
-          >
-            <MovieCard movie={movie} />
-          </Link>
-        ))}
-      </div>
+      <HeaderResults {...filter} />
     </div>
   );
 }
