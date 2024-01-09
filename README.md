@@ -1,9 +1,12 @@
 # Welcome to Watch Now
 
+**Have a nice day 🏋️ 🏃**
+
 > [!NOTE]
 > The source applies newest library version.
 
-**Have a nice day 🏋️ 🏃**
+**[Live demo](https://cana-plus.onrender.com/)** 🚀🚀🚀
+<br/>
 
 Based on [React.dev](https://react.dev/learn/start-a-new-react-project#nextjs) we've decided to apply [Vitejs](https://vitejs.dev/) because of [this](https://vitejs.dev/guide/why).
 
