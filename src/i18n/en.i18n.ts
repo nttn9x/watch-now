@@ -11,6 +11,7 @@ const en = {
     series_cast: "Series Cast",
     companies: "Companies",
     lets_enjoy: "Let's Enjoy",
+    whats_on_your_mind: "What's on your mind?",
   },
 };
 

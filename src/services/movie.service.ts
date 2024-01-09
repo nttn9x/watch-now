@@ -2,6 +2,7 @@ import { Movie } from "@hello/models/movie.model";
 import { callApi } from "@hello/utils/service.util";
 
 interface MovieParams {
+  query?: string;
   language?: string;
   page?: number;
 }
@@ -65,5 +66,14 @@ export async function getMovieById(id: string) {
   return await callApi<MovieResponse>({
     url: `/movie/${id}`,
     method: "GET",
+  });
+}
+
+export async function search(options: MovieParams = {}) {
+  const params = { ...paramsDefault, ...options };
+  return await callApi<MoviesResponse>({
+    url: `/search/movie`,
+    method: "GET",
+    params,
   });
 }

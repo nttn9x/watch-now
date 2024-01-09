@@ -1,0 +1,14 @@
+#search {
+    margin: 0;
+    animation: reveal 0.3s forwards;
+}
+
+@keyframes reveal {
+    from {
+        clip-path: inset(0 0 0 100%);
+    }
+
+    to {
+        clip-path: inset(0 0 0 0);
+    }
+}
