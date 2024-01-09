@@ -22,6 +22,10 @@ Runs the test watcher in an interactive mode. By default, runs tests related to 
 
 [Read more about testing](running-tests.md).
 
+### `npm run storybook` or `yarn storybook`
+
+Storybook comes with a built-in development server featuring everything you need for project development. Depending on your system configuration, running the storybook command will start the local development server, output the address for you, and automatically open the address in a new browser tab where a welcome screen greets you.
+
 ### `npm run build` or `yarn build`
 
 Builds the app for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance.
