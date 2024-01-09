@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 
-import { Button } from "@hello/components/atoms";
+import { Dialog } from "@hello/components/atoms";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: "Atoms/Button",
-  component: Button,
+  title: "Atoms/Dialog",
+  component: Dialog,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: "centered",
@@ -15,7 +15,7 @@ const meta = {
   tags: ["autodocs"],
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {},
-} satisfies Meta<typeof Button>;
+} satisfies Meta<typeof Dialog>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -24,6 +24,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     children: "Hello World",
-    onClick: action("on-click"),
+    visible: true,
+    onClose: action("on-click"),
   },
 };

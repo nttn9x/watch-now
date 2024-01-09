@@ -1,11 +1,16 @@
 import ReactStars from "react-stars";
 
-interface StarProps extends React.HTMLAttributes<HTMLElement> {
+interface StarProps {
+  /** The number of star. */
   count?: number;
+  /** The value of the component. */
   value?: number;
+  /** The size of star. */
   size?: number;
+  /** Deny/ Allow to interact with the component. */
   edit?: boolean;
-  onChange?: () => void;
+  /** Will be invoked any time the rating is changed. */
+  onChange?: ((new_rating: number) => void) | undefined;
 }
 
 function Stars(props: StarProps) {
@@ -13,6 +18,7 @@ function Stars(props: StarProps) {
 }
 
 Stars.defaultProps = {
+  value: 0,
   count: 5,
   size: 14,
   edit: false,

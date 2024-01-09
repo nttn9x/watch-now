@@ -7,10 +7,10 @@ import LogoIcon from "@hello/assets/logo.svg";
 
 const styles = {
   logo: "absolute top-6 left-6 z-20 h-6",
-  skeleton: "h-[600px] w-full",
-  container: "h-[600px] relative w-full z-10 flex flex-col justify-end gap-4",
+  skeleton: "h-[700px] w-full",
+  container: "h-[700px] relative w-full z-10 flex flex-col justify-end gap-4",
   backdrop: "absolute h-full w-full top-0 left-0 z-0 object-cover",
-  info: "h-full w-full z-10 bg-gradient-to-b from-transparent to-gray-950 flex flex-col p-8 justify-end gap-2",
+  info: "h-full w-full z-10 bg-gradient-to-b from-transparent to-gray-100/50 dark:to-gray-950 flex flex-col p-8 justify-end gap-2",
   row: "flex gap-2",
 };
 

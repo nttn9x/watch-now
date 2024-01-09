@@ -32,6 +32,6 @@ function Button({ variant, className, ...rest }: ButtonProps) {
 
 Button.defaultProps = {
   variant: "primary",
-};
+} as Required<ButtonProps>;
 
 export default Button;

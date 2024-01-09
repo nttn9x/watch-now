@@ -38,8 +38,8 @@ interface ColorTransformationsProps {
 }
 
 const colorTransformations: ColorTransformationsProps = {
-  textPrimary: "text-white",
-  textSecondary: "text-white/70",
+  textPrimary: "text-slate-900 dark:text-white",
+  textSecondary: "text-slate-900/70 dark:text-white/70",
 };
 
 const variantTransformations: DefaultVariantMappingProps = {
@@ -61,9 +61,10 @@ const transformDeprecatedColors = (color: ColorTransformationsType) => {
 };
 
 interface TypographyProps extends React.HTMLAttributes<HTMLElement> {
+  /** Applies the theme typography styles. */
   variant?: DefaultVariantMappingType;
+  /** Set the color on the text. */
   color?: ColorTransformationsType;
-  className?: string;
 }
 
 function Typography({
@@ -86,6 +87,6 @@ function Typography({
 Typography.defaultProps = {
   variant: "body",
   color: "textPrimary",
-};
+} as Required<TypographyProps>;
 
 export default Typography;

@@ -3,7 +3,9 @@ import React, { useRef } from "react";
 import CloseIcon from "@hello/assets/close.svg";
 
 interface DialogProps extends React.HTMLAttributes<HTMLElement> {
+  /** The state of dialog. */
   visible?: boolean;
+  /** The OnClose event occurs when the dialog is closed */
   onClose: (
     e: React.MouseEvent<HTMLDivElement | HTMLButtonElement, MouseEvent>
   ) => void;
@@ -11,7 +13,7 @@ interface DialogProps extends React.HTMLAttributes<HTMLElement> {
 
 const styles = {
   root: "w-screen h-screen absolute top-0 left-0 z-50 bg-black/70 pt-4",
-  body: "w-9/12 h-full bg-stone-950 m-auto rounded-t-lg overflow-hidden relative",
+  body: "w-9/12 h-full bg-white dark:bg-stone-950 m-auto rounded-t-lg overflow-hidden relative",
   closeButton: "absolute top-4 right-4 z-20 rounded-full bg-gray-950/60 p-2",
 };
 

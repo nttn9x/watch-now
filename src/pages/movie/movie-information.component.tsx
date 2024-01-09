@@ -13,12 +13,12 @@ const styles = {
   container: "flex flex-col gap-12 p-8",
   section: "flex flex-col gap-4",
   row: "flex gap-2 flex-wrap",
-  chip: "bg-gray-700 py-1 px-4 rounded-sm relative",
+  chip: "bg-gray-300 dark:bg-gray-700 py-1 px-4 rounded-sm relative",
   cast: "overflow-x-scroll flex-nowrap",
   castItem: "bg-gray-700 rounded-lg relative",
   castItemImage: "max-w-none w-44 h-60 rounded-lg",
   castItemName:
-    "absolute bottom-0 left-0 w-full px-2 py-2 text-center bg-black/70",
+    "absolute bottom-0 left-0 w-full px-2 py-2 text-center bg-white/70 dark:bg-black/70",
 };
 
 interface MovieInformationProps {
