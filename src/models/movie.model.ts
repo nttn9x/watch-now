@@ -20,7 +20,7 @@ export interface Movie {
   backdrop_path: string;
   production_countries?: ProductionCountry[];
   production_companies?: ProductionCompany[];
-  genre_ids: number[];
+  genre_ids?: number[];
   genres?: Genre[];
   id: number;
   spoken_languages?: SpokenLanguage[];
@@ -28,10 +28,10 @@ export interface Movie {
   original_title: string;
   overview: string;
   popularity: number;
-  poster_path: string;
+  poster_path?: string | undefined | null;
   release_date: string;
   title: string;
-  video: false;
+  video?: false;
   vote_average: number;
   vote_count: number;
 }

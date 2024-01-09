@@ -347,6 +347,7 @@ export const popularMovies = {
   total_pages: 42168,
   total_results: 843354,
 };
+
 export const upComingMovies = {
   dates: {
     maximum: "2024-01-31",

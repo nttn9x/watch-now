@@ -1,7 +1,7 @@
 import { http, HttpResponse } from "msw";
 import { topRatedMovies } from "./movies.handler";
 
-export const topRatedMovie = topRatedMovies.results[0];
+export const movie = topRatedMovies.results[0];
 
 export const credits = {
   id: 278,
@@ -52,13 +52,13 @@ export const credits = {
 };
 
 export const happyCaseHandlers = [
-  http.get(`/movie/${topRatedMovie.id}`, () => {
+  http.get(`/movie/${movie.id}`, () => {
     // Response resolver allows you to react to captured requests,
     // respond with mock responses or passthrough requests entirely.
     // For now, let's just print a message to the console.
-    return HttpResponse.json(topRatedMovie);
+    return HttpResponse.json(movie);
   }),
-  http.get(`/movie/${topRatedMovie.id}/credits`, () => {
+  http.get(`/movie/${movie.id}/credits`, () => {
     // Response resolver allows you to react to captured requests,
     // respond with mock responses or passthrough requests entirely.
     // For now, let's just print a message to the console.
