@@ -20,4 +20,5 @@ export default defineConfig({
     // since parsing CSS is slow
     css: true,
   },
+  base: "./",
 });
